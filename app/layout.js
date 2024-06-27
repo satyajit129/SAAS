@@ -6,6 +6,7 @@ import Sidebar from "@/Componants/Layouts/Sidebar";
 import "@/assets/styles/styles.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.min";
+import "@/assets/styles/style.scss"
 import Head from 'next/head';
 import Link from "next/link";
 
