@@ -13,7 +13,7 @@ const Nav = () => {
         }
     }
     return (
-        <nav className="sb-topnav navbar navbar-expand ngh-navbar">
+        <nav className="sb-topnav navbar navbar-expand ngh-bg-gradient">
             <Link className="navbar-brand ps-3" href="/">
             <img src="/logo.png" alt="Logo" className={'img-fluid'} />
             </Link>

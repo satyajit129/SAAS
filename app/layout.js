@@ -9,9 +9,14 @@ import "bootstrap/dist/js/bootstrap.bundle.min";
 import "@/assets/styles/style.scss"
 import Head from 'next/head';
 import Link from "next/link";
+import { usePathname } from "next/navigation";
+import { useEffect } from "react";
 
 export default function RootLayout({ children }) {
-
+    const path = usePathname()
+    useEffect(() => {
+        console.log(path);
+    },[path])
     return (
         <html lang="en">
             <head>
@@ -19,7 +24,11 @@ export default function RootLayout({ children }) {
                     integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
                     crossOrigin="anonymous" referrerPolicy="no-referrer" />
             </head>
-
+            {path == '/login' ? 
+            <body className="auth-body">
+                {children}
+            </body>
+            :
             <body className="sb-nav-fixed">
                 <Nav />
                 <div id="layoutSidenav">
@@ -39,6 +48,8 @@ export default function RootLayout({ children }) {
 
 
             </body>
+            }
+            
         </html>
     );
 }
