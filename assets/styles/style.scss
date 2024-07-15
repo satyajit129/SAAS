@@ -1,9 +1,12 @@
 $theme-color: #00545f;
 $theme-light: #00bcd4;
 $gradient-bg: linear-gradient(45deg, #00545f, #00bcd4, #00545f);
-body{
-    overflow-x: hidden;
+$transition: all .3s ease-in-out;
+
+body {
+  overflow-x: hidden;
 }
+
 p,
 h1,
 h2,
@@ -18,16 +21,20 @@ li {
   margin: 0;
   // color: red;
 }
+
 a {
   color: $theme-color;
   text-decoration: none;
+
   &:hover {
     text-decoration: none;
   }
 }
+
 .ngh-bg-gradient {
   background-image: $gradient-bg;
 }
+
 #sidenavAccordion {
   .sb-sidenav-menu {
     .nav {
@@ -36,9 +43,11 @@ a {
       }
     }
   }
+
   .sb-sidenav-footer {
     background-color: $theme-color;
     color: white;
+
     p {
       color: silver;
       font-size: 12px;
@@ -47,72 +56,98 @@ a {
     }
   }
 }
+
 #sidebarToggle {
   color: white;
 }
+
 #navbarDropdown {
   i {
     color: white;
   }
+
   &::after {
     color: white;
   }
 }
+
 footer {
   a {
     color: silver;
+
     &:hover {
       color: white;
     }
   }
 }
+
 .auth-body {
-    background-image: url("/auth-bg.png");
-    background-repeat: no-repeat;
-    background-size: cover;
-    width: 100vw;
-    height: 100vh;
-    background-color: #58695abd;
-    background-blend-mode: multiply;
-    position: relative;
+  background-image: url("/auth-bg.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100vw;
+  height: 100vh;
+  background-color: #58695abd;
+  background-blend-mode: multiply;
+  position: relative;
 }
-.auth-card{
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform:translate(-50%, -50%);
-    background-color: white;
-    padding: 20px;
-    border-radius: 5px;
-    width: 500px;
-    .auth-card-header{
-        padding:10px 20px;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        background: $theme-light;
-        img{
-            width: 150px;
-            margin-right: 10px;
-        }
-        h1{
-            color: $theme-color;
-            font-size: 24px;
-        }
+
+.auth-card {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  padding: 20px;
+  border-radius: 5px;
+  width: 500px;
+
+  .auth-card-header {
+    padding: 20px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: $theme-light;
+
+    img {
+      width: 150px;
+      margin-right: 10px;
     }
-    .auth-card-body{
-        padding: 30px;
+
+    h1 {
+      color: $theme-color;
+      font-size: 24px;
     }
-    .auth-card-footer{
-        padding: 10px 20px;
-        background-color: $theme-light;
-        display: flex;
-        justify-content: space-between;
-        a{
-            color:$theme-color;
-            &::hover{
-                color:$theme-light;
-            }
-        }
+  }
+
+  .auth-card-body {
+    padding: 30px;
+  }
+
+  .auth-card-footer {
+    padding: 20px 20px;
+    background-color: $theme-light;
+    display: flex;
+    justify-content: space-between;
+
+    a {
+      color: $theme-color;
+
+      &::hover {
+        color: $theme-light;
+      }
     }
+  }
+}
+.input-group {
+  position: relative;
+}
+.custom-validation-message {
+  position: absolute;
+  right: 0;
+  bottom: -22px;
+  color: red;
+}
+.animated{
+  transition:  $transition;
 }

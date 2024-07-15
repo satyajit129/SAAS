@@ -14,6 +14,7 @@ import { useEffect } from "react";
 
 export default function RootLayout({ children }) {
     const path = usePathname()
+    const ignore_default_layout = ['/login', '/register']
     useEffect(() => {
         console.log(path);
     },[path])
@@ -24,7 +25,7 @@ export default function RootLayout({ children }) {
                     integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
                     crossOrigin="anonymous" referrerPolicy="no-referrer" />
             </head>
-            {path == '/login' ? 
+            { ignore_default_layout.includes(path) ? 
             <body className="auth-body">
                 {children}
             </body>
